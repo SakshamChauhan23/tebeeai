@@ -24,23 +24,44 @@ if (nav) {
 
 const form = document.getElementById('contactForm');
 const success = document.getElementById('formSuccess');
+const FORMSPREE = 'https://formspree.io/f/xpwzgvkb';
 
 if (form) {
-  form.addEventListener('submit', event => {
+  form.addEventListener('submit', async event => {
     event.preventDefault();
 
     const name = form.querySelector('#name').value.trim();
+    const email = form.querySelector('#email').value.trim();
     const business = form.querySelector('#business').value.trim();
     const problem = form.querySelector('#problem').value.trim();
 
-    if (!name || !business || !problem) return;
+    if (!name || !email || !business || !problem) return;
 
-    const subject = encodeURIComponent(`TebeeAI enquiry from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\n\nBusiness: ${business}\n\nWhat is not working:\n${problem}`);
+    const submitBtn = form.querySelector('.form-submit');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
 
-    window.location.href = `mailto:hello@tebeeai.com?subject=${subject}&body=${body}`;
-    form.style.display = 'none';
-    if (success) success.classList.add('visible');
+    try {
+      const res = await fetch(FORMSPREE, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ name, email, business, problem })
+      });
+
+      if (res.ok) {
+        form.style.display = 'none';
+        if (success) success.classList.add('visible');
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send enquiry →';
+        alert('Something went wrong. Please try again.');
+      }
+    } catch {
+      // Network fallback — open mailto
+      const subject = encodeURIComponent(`TebeeAI enquiry from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nBusiness: ${business}\n\nWhat is not working:\n${problem}`);
+      window.location.href = `mailto:sakshamchauhan23@gmail.com?subject=${subject}&body=${body}`;
+    }
   });
 }
 
