@@ -1246,8 +1246,9 @@ p {
 }
 
 .page-cta-card h2 {
-  max-width: 12ch;
+  max-width: none;
   margin: 0 auto;
+  font-size: clamp(2rem, 4vw, 3.8rem);
 }
 
 .page-cta-card p:not(.eyebrow) {
