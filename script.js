@@ -24,7 +24,7 @@ if (nav) {
 
 const form = document.getElementById('contactForm');
 const success = document.getElementById('formSuccess');
-const FORMSPREE = 'https://formspree.io/f/xpwzgvkb';
+const WEB3FORMS_KEY = 'cf8cbdd7-bbc5-403f-aa5b-616948f88682';
 
 if (form) {
   form.addEventListener('submit', async event => {
@@ -42,13 +42,21 @@ if (form) {
     submitBtn.textContent = 'Sending…';
 
     try {
-      const res = await fetch(FORMSPREE, {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ name, email, business, problem })
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `TebeeAI enquiry from ${name}`,
+          name,
+          email,
+          business,
+          problem
+        })
       });
 
-      if (res.ok) {
+      const data = await res.json();
+      if (data.success) {
         form.style.display = 'none';
         if (success) success.classList.add('visible');
       } else {
@@ -57,7 +65,6 @@ if (form) {
         alert('Something went wrong. Please try again.');
       }
     } catch {
-      // Network fallback — open mailto
       const subject = encodeURIComponent(`TebeeAI enquiry from ${name}`);
       const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nBusiness: ${business}\n\nWhat is not working:\n${problem}`);
       window.location.href = `mailto:sakshamchauhan23@gmail.com?subject=${subject}&body=${body}`;
