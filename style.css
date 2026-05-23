@@ -394,6 +394,8 @@ p {
 
 .hero-copy h1 {
   max-width: none;
+  font-size: clamp(2rem, 3.4vw, 3.6rem);
+  line-height: 1.08;
 }
 
 .hero-title {
