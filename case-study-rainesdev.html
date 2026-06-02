@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study: Too Many Candidates, Too Little Signal — TebeeAI</title>
+  <meta name="description" content="How TebeeAI built a three-layer recruitment operations system for a US-based agency — a candidate community on Discord, an AI-assisted qualification flow, and structured outreach sequences." />
+  <meta name="keywords" content="recruitment operations, hiring systems, candidate qualification, AI hiring, TebeeAI case study" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://tebeeai.online/case-study-rainesdev.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tebeeai.online/case-study-rainesdev.html" />
+  <meta property="og:title" content="Too many candidates, too little signal. — TebeeAI Case Study" />
+  <meta property="og:description" content="A US-based recruitment agency was losing senior capacity to unqualified requirements. We built a three-layer system to fix it." />
+  <meta property="og:image" content="https://tebeeai.online/logo.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Too many candidates, too little signal. — TebeeAI" />
+  <meta name="twitter:description" content="A three-layer recruitment operations system: candidate community, AI-assisted qualification, and structured outreach." />
+  <meta name="twitter:image" content="https://tebeeai.online/logo.png" />
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav id="nav" class="site-nav">
+  <div class="nav-shell">
+    <a href="index.html" class="brand-pill" aria-label="TebeeAI home">
+      <span class="brand-word">TebeeAI</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#what-we-do">How we work</a></li>
+      <li><a href="index.html#proof">Proof</a></li>
+      <li><a href="where-we-work.html">Where we work</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="index.html#contact" class="nav-search" aria-label="Go to contact"><span></span></a>
+      <a href="https://calendar.app.google/4Yd1inMVkTrHBK3f6" class="nav-cta" target="_blank" rel="noopener">Book a call</a>
+    </div>
+
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+  <section class="case-hero">
+    <div class="container">
+      <div class="case-meta">
+        <span class="case-tag">Case Study</span>
+        <span class="case-tag">Hiring and Recruitment</span>
+        <span class="case-tag">Operations and Workflow</span>
+        <span class="case-tag">United States</span>
+      </div>
+      <h1>Too many candidates,<br>too little signal.</h1>
+      <p class="case-lead">How a US-based recruitment agency turned an overwhelmed pipeline into a system that runs on logic, not individual effort and memory.</p>
+    </div>
+    <div class="container-wide case-cover">
+      <img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=1600&amp;q=80&amp;auto=format&amp;fit=crop" alt="Professional hiring environment — interview conversation in a modern workspace" />
+    </div>
+  </section>
+
+  <div class="case-body">
+    <div class="container">
+      <div class="case-article">
+
+        <section class="case-section">
+          <h2>The Situation</h2>
+          <p>A US-based premium recruitment agency was operating at volume. Leads were coming in consistently, the candidate pool existed, and the team was experienced. On paper, the pipeline looked healthy.</p>
+          <p>In practice, it was not.</p>
+          <p>Requirements coming in were broad. Broad enough that nobody on the team could tell, at intake, which ones were worth pursuing immediately and which ones would dissolve the moment someone asked a follow-up question. Senior team members were spending significant time on requirements that had no business reaching them yet. Meanwhile, the candidate pool sat largely unmobilised, distributed across inboxes and spreadsheets with no owned environment to keep it warm.</p>
+          <p>The team did not have a sourcing problem. They had a systems problem.</p>
+        </section>
+
+        <section class="case-section">
+          <h2>What we found</h2>
+          <p>When we mapped the pipeline, three gaps became clear.</p>
+
+          <div class="case-gaps">
+            <div class="case-gap">
+              <span class="gap-num">01</span>
+              <p>There was no qualification layer between demand and delivery. Every requirement that came in went directly to the team regardless of its readiness. Attention, the agency's most finite resource, was being distributed indiscriminately.</p>
+            </div>
+            <div class="case-gap">
+              <span class="gap-num">02</span>
+              <p>The candidate pool had no home. Candidates existed as records, not as a community. Keeping them warm required individual effort each time, which meant it rarely happened consistently.</p>
+            </div>
+            <div class="case-gap">
+              <span class="gap-num">03</span>
+              <p>Outreach was reactive. When a requirement was confirmed, the team had to build outreach from scratch. There was no infrastructure that could activate quickly against a qualified need.</p>
+            </div>
+          </div>
+
+          <p>These three gaps compounded each other. Fixing sourcing or adding headcount would not have addressed any of them.</p>
+        </section>
+
+        <section class="case-section">
+          <h2>What we built</h2>
+
+          <figure class="case-figure">
+            <img src="rainesdev-system.png" alt="The recruitment operations platform built for this engagement — showing open jobs, applicant pipeline, scheduling, and candidate management in a single view." />
+            <figcaption>The recruitment operations platform built to run the three-layer system, tracking open requirements, candidate availability, and outreach activity from a single environment.</figcaption>
+          </figure>
+
+          <p>The solution was a three-layer recruitment operations system. Each layer addressed one gap specifically.</p>
+
+          <div class="layer-stack">
+            <div class="layer-card">
+              <div class="layer-num">Layer one</div>
+              <h3>A candidate community on Discord</h3>
+              <p>We moved the existing candidate pool into a structured Discord environment. This created an owned space where candidates could be organised by role type and availability, kept warm through ambient communication, and activated quickly when a relevant requirement was confirmed. The pool went from being a static list to a living environment that generated signal without requiring individual outreach each time.</p>
+            </div>
+
+            <div class="layer-card">
+              <div class="layer-num">Layer two</div>
+              <h3>A requirements qualification flow</h3>
+              <p>We built a structured intake process that every requirement had to pass through before it was raised to the team as an active search. The flow asked a fixed set of qualifying questions around role definition, candidate criteria, timeline, and decision-making authority. Requirements that could not answer these questions clearly were returned for sharpening before they moved forward.</p>
+              <p>AI sat inside this layer as a first-pass filter, flagging vague language, identifying missing criteria, and suggesting clarifying questions based on role type. The AI handled pattern recognition. A human made the final call on whether a requirement was ready. That division of labour kept the system honest.</p>
+            </div>
+
+            <div class="layer-card">
+              <div class="layer-num">Layer three</div>
+              <h3>LinkedIn and email outreach sequences</h3>
+              <p>Once a requirement passed qualification, a structured outreach sequence activated against the relevant segment of the candidate community. Sequences were written by role type, timed to signals from the Discord layer, and required no individual composition from the team for each search. Outreach became a response to a confirmed need rather than a scramble built from nothing.</p>
+            </div>
+          </div>
+
+        </section>
+
+        <section class="case-section">
+          <h2>What changed</h2>
+          <p>The three layers did not eliminate volume. They changed where the team's attention landed.</p>
+          <p>Requirements reaching senior team members were pre-qualified. The candidate pool was reachable without individual effort. Outreach ran against confirmed briefs rather than speculative ones. The operation became manageable at the same volume that had previously felt overwhelming.</p>
+          <p>The agency now has a pipeline that runs on system logic rather than individual effort and memory.</p>
+        </section>
+
+        <div class="case-tags-row">
+          <p class="eyebrow">Practice areas</p>
+          <div class="case-practice-tags">
+            <a href="where-we-work.html#hiring" class="case-practice-link">Hiring and Recruitment</a>
+            <a href="where-we-work.html#operations" class="case-practice-link">Operations and Workflow</a>
+          </div>
+        </div>
+
+        <hr class="case-divider" />
+        <p class="case-disclaimer">Client identity withheld at their request. Outcomes described reflect the operational changes delivered during the engagement.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <section class="page-cta-section">
+    <div class="container">
+      <div class="page-cta-card">
+        <p class="eyebrow">Work with a similar problem?</p>
+        <h2>If your team is dealing with volume it cannot process cleanly, the problem is almost always upstream of sourcing.</h2>
+        <p>We find where the system is breaking and build what fixes it. One conversation is enough to know whether we can help.</p>
+        <div class="case-cta-actions">
+          <a href="https://calendar.app.google/4Yd1inMVkTrHBK3f6" class="btn btn-primary" target="_blank" rel="noopener">Book a call <span aria-hidden="true">-></span></a>
+          <a href="index.html#contact" class="btn case-cta-secondary">Send us the detail <span aria-hidden="true">-></span></a>
+        </div>
+        <p class="case-share-note">Know someone running a recruitment or ops team dealing with this? Forward this page to them.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a href="index.html" class="footer-brand">TebeeAI</a>
+      <p>We find what is holding your business back and build what fixes it.</p>
+    </div>
+    <ul>
+      <li><a href="index.html#what-we-do">How we work</a></li>
+      <li><a href="index.html#proof">Proof</a></li>
+      <li><a href="where-we-work.html">Where we work</a></li>
+    </ul>
+    <ul>
+      <li><a href="mailto:hello@tebeeai.com">Email</a></li>
+      <li><a href="https://wa.me/917428711048" target="_blank" rel="noopener">WhatsApp</a></li>
+      <li><a href="https://calendar.app.google/4Yd1inMVkTrHBK3f6" target="_blank" rel="noopener">Book a call</a></li>
+    </ul>
+    <div class="footer-meta">
+      <p>India / United States / Europe</p>
+      <p>© 2026 TebeeAI. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
