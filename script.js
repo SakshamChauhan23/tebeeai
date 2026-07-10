@@ -25,6 +25,8 @@ if (nav) {
 const form = document.getElementById('contactForm');
 const success = document.getElementById('formSuccess');
 const WEB3FORMS_KEY = 'cf8cbdd7-bbc5-403f-aa5b-616948f88682';
+const SUPABASE_URL = 'https://fxlyuykucnydxqtapbgf.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ4bHl1eWt1Y255ZHhxdGFwYmdmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyMDA4NjYsImV4cCI6MjA5ODc3Njg2Nn0.-ILnbGUzddi1B4ORvOr-B7AzFS7-bLxaGA75_h7Q1J8';
 
 if (form) {
   form.addEventListener('submit', async event => {
@@ -40,6 +42,18 @@ if (form) {
     const submitBtn = form.querySelector('.form-submit');
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending…';
+
+    // Store the submission in Supabase. Best effort: never blocks the email flow below.
+    fetch(`${SUPABASE_URL}/rest/v1/contact_submissions`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({ name, email, business, problem })
+    }).catch(() => {});
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
