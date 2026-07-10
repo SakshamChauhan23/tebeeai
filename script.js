@@ -1,3 +1,41 @@
+// Cookie consent
+const cookieBanner = document.getElementById('cookieBanner');
+const cookieAccept = document.getElementById('cookieAccept');
+const cookieDecline = document.getElementById('cookieDecline');
+const COOKIE_CONSENT_KEY = 'tebeeai-cookie-consent';
+
+function applyCookieConsent(value) {
+  if (typeof gtag === 'function') {
+    gtag('consent', 'update', { analytics_storage: value === 'granted' ? 'granted' : 'denied' });
+  }
+}
+
+if (cookieBanner) {
+  const storedConsent = localStorage.getItem(COOKIE_CONSENT_KEY);
+
+  if (storedConsent) {
+    applyCookieConsent(storedConsent);
+  } else {
+    cookieBanner.classList.add('visible');
+  }
+
+  if (cookieAccept) {
+    cookieAccept.addEventListener('click', () => {
+      localStorage.setItem(COOKIE_CONSENT_KEY, 'granted');
+      applyCookieConsent('granted');
+      cookieBanner.classList.remove('visible');
+    });
+  }
+
+  if (cookieDecline) {
+    cookieDecline.addEventListener('click', () => {
+      localStorage.setItem(COOKIE_CONSENT_KEY, 'denied');
+      applyCookieConsent('denied');
+      cookieBanner.classList.remove('visible');
+    });
+  }
+}
+
 const nav = document.getElementById('nav');
 const hamburger = document.getElementById('hamburger');
 
@@ -81,6 +119,16 @@ if (form) {
     } catch {
       const subject = encodeURIComponent(`TebeeAI enquiry from ${name}`);
       const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nBusiness: ${business}\n\nWhat is not working:\n${problem}`);
+
+      if (success) {
+        const heading = success.querySelector('h3');
+        const message = success.querySelector('p');
+        if (heading) heading.textContent = 'Message prepared.';
+        if (message) message.textContent = 'Your email client should open with the enquiry ready to send.';
+        form.style.display = 'none';
+        success.classList.add('visible');
+      }
+
       window.location.href = `mailto:hello@tebeeai.online?subject=${subject}&body=${body}`;
     }
   });
