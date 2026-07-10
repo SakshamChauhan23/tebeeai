@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Case Study: Too Many Candidates, Too Little Signal — TebeeAI</title>
-  <meta name="description" content="How TebeeAI built a three-layer recruitment operations system for a US-based agency — a candidate community on Discord, an AI-assisted qualification flow, and structured outreach sequences." />
+  <meta name="description" content="How TebeeAI built a three layer recruitment operations system: a candidate community, a qualification flow, and structured outreach sequences." />
   <meta name="keywords" content="recruitment operations, hiring systems, candidate qualification, AI hiring, TebeeAI case study" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://tebeeai.online/case-study-rainesdev.html" />
@@ -27,6 +27,36 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Too many candidates, too little signal.",
+    "description": "How TebeeAI built a three layer recruitment operations system for a US based agency: a candidate community, an AI assisted qualification flow, and structured outreach sequences.",
+    "image": "https://tebeeai.online/rainesdev-system.png",
+    "author": { "@type": "Organization", "name": "TebeeAI", "url": "https://tebeeai.online/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TebeeAI",
+      "logo": { "@type": "ImageObject", "url": "https://tebeeai.online/logo.png" }
+    },
+    "datePublished": "2026-06-02",
+    "dateModified": "2026-07-06",
+    "mainEntityOfPage": "https://tebeeai.online/case-study-rainesdev.html"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tebeeai.online/" },
+      { "@type": "ListItem", "position": 2, "name": "Too Many Candidates, Too Little Signal", "item": "https://tebeeai.online/case-study-rainesdev.html" }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -37,9 +67,9 @@
     </a>
 
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html#what-we-do">How we work</a></li>
-      <li><a href="index.html#proof">Proof</a></li>
-      <li><a href="where-we-work.html">Where we work</a></li>
+      <li><a href="index.html#how-it-works">How it works</a></li>
+      <li><a href="index.html#included">What you get</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
 
@@ -77,15 +107,14 @@
       <div class="case-article">
 
         <section class="case-section">
-          <h2>The Situation</h2>
+          <p class="case-eyebrow">Problem</p>
+          <h2>The situation</h2>
           <p>A US-based premium recruitment agency was operating at volume. Leads were coming in consistently, the candidate pool existed, and the team was experienced. On paper, the pipeline looked healthy.</p>
           <p>In practice, it was not.</p>
           <p>Requirements coming in were broad. Broad enough that nobody on the team could tell, at intake, which ones were worth pursuing immediately and which ones would dissolve the moment someone asked a follow-up question. Senior team members were spending significant time on requirements that had no business reaching them yet. Meanwhile, the candidate pool sat largely unmobilised, distributed across inboxes and spreadsheets with no owned environment to keep it warm.</p>
           <p>The team did not have a sourcing problem. They had a systems problem.</p>
-        </section>
 
-        <section class="case-section">
-          <h2>What we found</h2>
+          <h3>What we found</h3>
           <p>When we mapped the pipeline, three gaps became clear.</p>
 
           <div class="case-gaps">
@@ -107,14 +136,43 @@
         </section>
 
         <section class="case-section">
+          <p class="case-eyebrow">Solution</p>
+          <h2>The fix</h2>
+          <p>The solution was a three-layer recruitment operations system, with each layer addressing one gap specifically: where candidates lived, how requirements were qualified before ever reaching the team, and how outreach activated once a requirement was confirmed ready.</p>
+          <p>No single layer would have worked alone. A qualification flow with nowhere warm to send confirmed requirements is just a filter. A candidate community with no qualification layer feeding it is just a bigger inbox. Together, the three layers moved the bottleneck from headcount to structure, which is the part that scales.</p>
+        </section>
+
+        <section class="case-section">
+          <p class="case-eyebrow">Workflow</p>
           <h2>What we built</h2>
+
+          <div class="flow-ribbon">
+            <div class="flow-ribbon-segment flow-ribbon-1">Candidate community</div>
+            <div class="flow-ribbon-segment flow-ribbon-2">Qualification flow</div>
+            <div class="flow-ribbon-segment flow-ribbon-3">Outreach sequences</div>
+          </div>
+
+          <div class="flow-nodes" style="margin: 28px 0 8px;">
+            <div class="flow-node">
+              <span class="flow-node-num">Layer one</span>
+              <h3>Candidates live in one warm community</h3>
+            </div>
+            <span class="flow-connector" aria-hidden="true"></span>
+            <div class="flow-node">
+              <span class="flow-node-num">Layer two</span>
+              <h3>Requirements pass a qualification flow</h3>
+            </div>
+            <span class="flow-connector" aria-hidden="true"></span>
+            <div class="flow-node flow-node-accent">
+              <span class="flow-node-num">Layer three</span>
+              <h3>Outreach activates against the qualified need</h3>
+            </div>
+          </div>
 
           <figure class="case-figure">
             <img src="rainesdev-system.png" alt="The recruitment operations platform built for this engagement — showing open jobs, applicant pipeline, scheduling, and candidate management in a single view." />
             <figcaption>The recruitment operations platform built to run the three-layer system, tracking open requirements, candidate availability, and outreach activity from a single environment.</figcaption>
           </figure>
-
-          <p>The solution was a three-layer recruitment operations system. Each layer addressed one gap specifically.</p>
 
           <div class="layer-stack">
             <div class="layer-card">
@@ -140,10 +198,30 @@
         </section>
 
         <section class="case-section">
+          <p class="case-eyebrow">Results</p>
           <h2>What changed</h2>
           <p>The three layers did not eliminate volume. They changed where the team's attention landed.</p>
-          <p>Requirements reaching senior team members were pre-qualified. The candidate pool was reachable without individual effort. Outreach ran against confirmed briefs rather than speculative ones. The operation became manageable at the same volume that had previously felt overwhelming.</p>
-          <p>The agency now has a pipeline that runs on system logic rather than individual effort and memory.</p>
+
+          <div class="before-after-grid">
+            <div class="before-after-col before-after-col-before">
+              <h3>Before</h3>
+              <ul>
+                <li>Every requirement reached senior team members regardless of readiness</li>
+                <li>Candidates existed as scattered records with no owned space to stay warm</li>
+                <li>Outreach was built from scratch after each requirement was confirmed</li>
+              </ul>
+            </div>
+            <div class="before-after-col before-after-col-after">
+              <h3>After</h3>
+              <ul>
+                <li>Only pre-qualified requirements reach the team</li>
+                <li>The candidate pool lives in one community, kept warm continuously</li>
+                <li>Outreach activates automatically against a confirmed, qualified need</li>
+              </ul>
+            </div>
+          </div>
+
+          <p>Outreach ran against confirmed briefs rather than speculative ones, and the operation became manageable at the same volume that had previously felt overwhelming. The agency now has a pipeline that runs on system logic rather than individual effort and memory.</p>
         </section>
 
         <div class="case-tags-row">
@@ -185,12 +263,12 @@
       <p>We find what is holding your business back and build what fixes it.</p>
     </div>
     <ul>
-      <li><a href="index.html#what-we-do">How we work</a></li>
-      <li><a href="index.html#proof">Proof</a></li>
-      <li><a href="where-we-work.html">Where we work</a></li>
+      <li><a href="index.html#how-it-works">How it works</a></li>
+      <li><a href="index.html#included">What you get</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
     </ul>
     <ul>
-      <li><a href="mailto:hello@tebeeai.com">Email</a></li>
+      <li><a href="mailto:hello@tebeeai.online">Email</a></li>
       <li><a href="https://wa.me/917428711048" target="_blank" rel="noopener">WhatsApp</a></li>
       <li><a href="https://calendar.app.google/4Yd1inMVkTrHBK3f6" target="_blank" rel="noopener">Book a call</a></li>
     </ul>

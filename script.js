@@ -67,7 +67,7 @@ if (form) {
     } catch {
       const subject = encodeURIComponent(`TebeeAI enquiry from ${name}`);
       const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nBusiness: ${business}\n\nWhat is not working:\n${problem}`);
-      window.location.href = `mailto:sakshamchauhan23@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:hello@tebeeai.online?subject=${subject}&body=${body}`;
     }
   });
 }
@@ -85,24 +85,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Explore section — hover to preview
-const exploreLinks = document.querySelectorAll('.explore-link');
-const exploreCards = document.querySelectorAll('.explore-card');
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+  const btn = item.querySelector('.faq-question');
+  const answer = item.querySelector('.faq-answer');
+  if (!btn || !answer) return;
 
-if (exploreLinks.length && exploreCards.length) {
-  const activateExplore = (idx) => {
-    exploreLinks.forEach((l, i) => l.classList.toggle('active', i === idx));
-    exploreCards.forEach((c, i) => c.classList.toggle('active', i === idx));
-  };
-  activateExplore(0);
-  exploreLinks.forEach((link, idx) => {
-    link.addEventListener('mouseenter', () => activateExplore(idx));
-    link.addEventListener('focus', () => activateExplore(idx));
+  btn.addEventListener('click', () => {
+    const isOpen = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+    answer.style.maxHeight = isOpen ? `${answer.scrollHeight}px` : '';
   });
-}
+});
 
 const revealTargets = document.querySelectorAll(
-  '.insight-card, .method-card, .story-card, .service-card, .work-row, .feature-grid, .contact-panel, .start-grid'
+  '.insight-card, .method-card, .story-card, .service-card, .work-row, .feature-grid, .contact-panel, .capability-card, .pricing-card, .pricing-value, .faq-item'
 );
 
 if ('IntersectionObserver' in window) {
@@ -123,4 +120,52 @@ if ('IntersectionObserver' in window) {
   });
 } else {
   revealTargets.forEach(element => element.classList.add('in-view'));
+}
+
+// Hero flow diagram — lines draw in and zones drift as the page scrolls
+const heroFlow = document.getElementById('heroFlow');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (heroFlow && !reduceMotion) {
+  const paths = Array.from(heroFlow.querySelectorAll('.hf-path'));
+  const zones = Array.from(heroFlow.querySelectorAll('.hf-quadrant'));
+  const lengths = paths.map(path => path.getTotalLength());
+
+  paths.forEach((path, index) => {
+    path.style.strokeDasharray = String(lengths[index]);
+  });
+
+  let ticking = false;
+
+  const updateFlow = () => {
+    const rect = heroFlow.getBoundingClientRect();
+    const total = rect.height + window.innerHeight;
+    const progress = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / total));
+
+    paths.forEach((path, index) => {
+      const length = lengths[index];
+      const drawn = Math.min(length, Math.max(0, (progress * 1.35 - index * 0.025) * length));
+      path.style.strokeDashoffset = String(length - drawn);
+    });
+
+    zones.forEach((zone, index) => {
+      const depth = index % 2 === 0 ? 12 : -16;
+      zone.style.transform = `translateY(${(0.5 - progress) * depth}px)`;
+    });
+
+    ticking = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(updateFlow);
+  }, { passive: true });
+
+  window.addEventListener('resize', updateFlow);
+  updateFlow();
+} else if (heroFlow) {
+  heroFlow.querySelectorAll('.hf-path').forEach(path => {
+    path.style.strokeDasharray = 'none';
+  });
 }

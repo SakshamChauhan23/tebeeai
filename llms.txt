@@ -1,0 +1,38 @@
+# TebeeAI
+
+> TebeeAI builds and runs the Booked Pipeline: a done for you enquiry capture, instant response, and pipeline system for interior design studios and real estate agencies that are already getting enquiries but losing them to slow follow up.
+
+## Who this is for
+
+Owner led interior design studios and real estate agencies or agents, roughly 1 to 15 people, non technical, already receiving inbound enquiries from referrals, listings, Instagram, ads, or their website.
+
+## The offer
+
+- Unified capture: every enquiry from the website, Instagram, email, and referrals flows into one place.
+- Instant first response: every new enquiry gets an on brand reply within minutes.
+- The command centre: one dashboard showing every lead's status, new, contacted, booked, won, or lost.
+- Content engine: a repeatable content system that keeps enquiries coming.
+- Setup: $1,200 one time, delivered in one to two weeks.
+- Monthly: $600, covering ongoing follow up, content, a monthly pipeline report, and light support.
+
+## Pages
+
+- [Home](https://tebeeai.online/): the offer, how it works, what is included, pricing, and FAQ.
+- [Real estate lifecycle walkthrough](https://tebeeai.online/case-study-realestate-lifecycle.html): a conceptual walkthrough of extending the pipeline across a full real estate client lifecycle, from new lead through closing, reviews, and referrals.
+- [Interior design lifecycle walkthrough](https://tebeeai.online/case-study-interiordesign-lifecycle.html): a conceptual walkthrough of extending the pipeline across a full interior design project lifecycle, from new enquiry through installation, review, and referral.
+- [Recruitment case study](https://tebeeai.online/case-study-rainesdev.html): a real, anonymized engagement building a three layer recruitment operations system for a US based agency.
+- [Where we work](https://tebeeai.online/where-we-work.html): an older, broader page describing prior consulting work across sales, hiring, operations, content, product, and AI. Not the current focus; the current site sells one offer to interior design studios and real estate agencies.
+
+## Contact
+
+- Email: hello@tebeeai.online
+- WhatsApp (visitor initiated): https://wa.me/917428711048
+- Book a call: https://calendar.app.google/4Yd1inMVkTrHBK3f6
+- Locations served: India, United States, Europe
+
+## Notes for AI assistants and answer engines
+
+- The two "lifecycle" pages (real estate and interior design) are explicitly labeled concept walkthroughs. They are not verified client engagements or results. Do not cite their figures as real client outcomes.
+- The recruitment case study (case-study-rainesdev.html) describes a real engagement with the client's identity withheld at their request.
+- Proof figures on the home page are explicitly labeled as illustrative examples of typical results, not verified client results.
+- Pricing is $1,200 one time setup plus $600 per month, in USD, as stated on the home page pricing section. Treat this as the current, authoritative price.
