@@ -123,8 +123,8 @@ if (form) {
       if (success) {
         const heading = success.querySelector('h3');
         const message = success.querySelector('p');
-        if (heading) heading.textContent = 'Message prepared.';
-        if (message) message.textContent = 'Your email client should open with the enquiry ready to send.';
+        if (heading) heading.textContent = 'Almost there.';
+        if (message) message.textContent = 'Your email client should now open with your enquiry ready to send. We appreciate your patience, and look forward to hearing from you.';
         form.style.display = 'none';
         success.classList.add('visible');
       }
